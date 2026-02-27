@@ -13,7 +13,7 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     background: #f4f6fb;
 }
@@ -86,7 +86,8 @@ body {
 
 ul {
     list-style: none;
-    max-width: 600px;
+    width: 100%;
+    max-width: 700px;
 }
 
 li {
@@ -99,6 +100,7 @@ li {
     align-items: center;
     border: 1px solid #e5e7eb;
     transition: 0.2s;
+    word-break: break-word;
 }
 
 li:hover {
@@ -119,10 +121,71 @@ li.completed {
     font-size: 13px;
     cursor: pointer;
     transition: 0.3s;
+    margin-left: 15px;
 }
 
 .delete-btn:hover {
     background: #dc2626;
+}
+
+@media (max-width: 1024px) {
+    .main {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    .sidebar div {
+        margin-bottom: 0;
+    }
+
+    .sidebar p:last-child {
+        display: none;
+    }
+
+    .main {
+        padding: 25px;
+    }
+
+    .input-section {
+        flex-direction: column;
+    }
+
+    .input-section button {
+        width: 100%;
+    }
+
+    ul {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar h2 {
+        font-size: 20px;
+    }
+
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .delete-btn {
+        align-self: flex-end;
+    }
 }
 </style>
 </head>
